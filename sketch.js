@@ -43,6 +43,26 @@ function draw() {
   fill(255, 213, 154);
   noFill();
 
+  
+  //curve(125, 600, 125, 600, 200, 410, 125, 310)
+  
+  beginShape(); 
+  
+  vertex(135, 600);
+  curveVertex(135, 600); 
+  curveVertex(125, 500); 
+  curveVertex(200, 410); 
+  curveVertex(125, 310); 
+  curveVertex(100, 200);
+  curveVertex(190, 200);
+  curveVertex(225, 235);
+  curveVertex(287, 230);
+  curveVertex(325, 245)
+  curveVertex(335, 280);
+  curveVertex(329, 305);
+  vertex(329, 305);
+  endShape(); 
+
   breath = map(sin(phase * 3), -1, 1, 0, 10)
   h = 120 //+ wig;
 
@@ -92,6 +112,14 @@ function draw() {
   endShape()
 
   translate(-circArray[0], -circArray[1])
+
+  beginShape()
+  vertex(300, 530)
+  curveVertex(300, 530)
+  curveVertex(312, 565)
+  curveVertex(310, 600)
+  vertex(310, 600)
+  endShape()
 
 
   phase += 0.5;
