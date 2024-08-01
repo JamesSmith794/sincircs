@@ -10,6 +10,7 @@ let deformations = [];
 
 let img;
 let snd;
+let ruct;
 let sceneAmp;
 let gArray = []
 
@@ -21,6 +22,8 @@ function preload() {
   for (i = 0; i<limit; i++) {
     gArray[i] = loadSound('sfx/g' + (i + 1) +'.wav')
   }
+
+  ruct = loadSound('sfx/b1.wav');
 }
 
 function setup() {
@@ -184,7 +187,7 @@ function createSineDisplacement(start, end, amp, innerwl, speed){
     }
   }
 
-  console.log(cos(360))
+  //console.log(cos(360))
   deformations.push(sineArray);
 
   return sineArray;
@@ -200,4 +203,8 @@ function playSound() {
   snd = gArray[n]
   console.log(snd.duration())
   snd.play();
+}
+
+function playRuct() {
+  ruct.play();
 }
