@@ -26,7 +26,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, 600);
   c = width * 0.75;
-  cordHeight = createSlider(1, 300, 75);
+  cordHeight = createSlider(50, 400, 125);
   displacer = createSlider(50, res-50, res/2);
   angleMode(DEGREES)  
 
@@ -38,8 +38,13 @@ function draw() {
   background(255);
   image(img, 0,0, height, height);
 
+  fill(0);
+  noStroke();
+  ellipse(220, 144, 20, 20);
+
   stroke(0);
   strokeWeight(5);
+
   fill(255, 213, 154);
   noFill();
 
@@ -51,7 +56,7 @@ function draw() {
   vertex(135, 600);
   curveVertex(135, 600); 
   curveVertex(125, 500); 
-  curveVertex(200, 410); 
+  curveVertex(185, 410); 
   curveVertex(125, 310); 
   curveVertex(100, 200);
   curveVertex(190, 200);
@@ -64,7 +69,7 @@ function draw() {
   endShape(); 
 
   breath = map(sin(phase * 3), -1, 1, 0, 10)
-  h = 120 //+ wig;
+  h = cordHeight.value();
 
   deformations = []
 
@@ -72,6 +77,7 @@ function draw() {
 
   //createSineDisplacement(0, 300, 10, 1, -5)
   createSineDisplacement(100, 300, 20)
+  createSineDisplacement(145, 165, 6)
   createSineDisplacement(0, 300, 5, 1, -5)
   createSineDisplacement(0, 150, 4 * gur, 2, 100)
 
@@ -184,9 +190,9 @@ function createSineDisplacement(start, end, amp, innerwl, speed){
   return sineArray;
 }
 
-function windowResized() {
-  resizeCanvas(windowWidth, 400);
-}
+// function windowResized() {
+//   resizeCanvas(windowWidth, 600);
+// }
 
 function playSound() {
   n = Math.floor(Math.random() * limit)

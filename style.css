@@ -7,6 +7,6 @@ canvas {
     display: block;
 }
   
-button {
+.button-menu {
     position: fixed;
 }
